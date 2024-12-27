@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     fun showFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .add(R.id.fragmentContainer, fragment)
+            .addToBackStack(null)
             .commit()
     }
 }
