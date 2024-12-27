@@ -26,7 +26,8 @@ class MainActivity : AppCompatActivity() {
 
     fun showFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, fragment)
+            .add(R.id.fragmentContainer, fragment)
+            .addToBackStack(null)
             .commit()
     }
 }
