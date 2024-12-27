@@ -13,6 +13,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         showFragment(ChatFragment())
+        initListeners()
+    }
+
+    fun initListeners() {
         binding.chatTab.setOnClickListener {
             showFragment(ChatFragment())
         }
@@ -23,7 +27,6 @@ class MainActivity : AppCompatActivity() {
             showFragment(StatusFragment())
         }
     }
-
     fun showFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .add(R.id.fragmentContainer, fragment)
